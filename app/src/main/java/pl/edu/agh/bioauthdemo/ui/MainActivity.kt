@@ -1,7 +1,11 @@
-package pl.edu.agh.bioauthdemo
+package pl.edu.agh.bioauthdemo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import pl.edu.agh.bioauthdemo.BuildConfig
+import pl.edu.agh.bioauthdemo.R
+import pl.edu.agh.bioauthdemo.util.AppConfig
 
 class MainActivity : AppCompatActivity() {
 
