@@ -1,0 +1,3 @@
+[submodule "bioauthsdk"]
+	path = bioauthsdk
+	url = git@github.com:jsamol/bioauth-android-sdk.git
