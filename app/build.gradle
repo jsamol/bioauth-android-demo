@@ -33,7 +33,7 @@ android {
             versionNameSuffix('-mobileLiveness')
         }
         serverLiveness {
-            buildConfigField('String', 'LIVENESS_MODE', 'SERVER')
+            buildConfigField('String', 'LIVENESS_MODE', '"SERVER"')
             buildConfigField('String', 'APP_ID', localProperties.getProperty('serverLiveness.appId'))
             buildConfigField('String', 'APP_SECRET', localProperties.getProperty('serverLiveness.appSecret'))
             versionNameSuffix('-serverLiveness')
@@ -45,7 +45,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':bioauth')
 
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.core:core-ktx:1.0.1'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
