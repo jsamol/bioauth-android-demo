@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/padding_big"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,6 +12,16 @@
         android:id="@+id/guideLine"
         app:layout_constraintGuide_percent="0.5"
         android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/userIdEditText"
+        android:text="@string/edit_text_user_id_default"
+        android:hint="@string/edit_text_user_id_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/registerFaceButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

@@ -16,7 +16,9 @@ class RegisterFaceActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_face)
 
-        faceRegistrationView.initRegistration("testUser", object : RegistrationListener {
+        val userId = intent?.extras?.getString(EXTRA_USER_ID) ?: "User"
+
+        faceRegistrationView.initRegistration(userId, object : RegistrationListener {
             override fun onSuccess(publicKey: PublicKey) {
                 StatsUtil.onEnd()
                 Toast.makeText(this@RegisterFaceActivity, "Samples registered.", Toast.LENGTH_SHORT).show()
@@ -27,5 +29,9 @@ class RegisterFaceActivity : AppCompatActivity() {
                 Toast.makeText(this@RegisterFaceActivity, "Samples could not be registered.", Toast.LENGTH_SHORT).show()
             }
         }, AppConfig.livenessMode)
+    }
+
+    companion object {
+        const val EXTRA_USER_ID = "userIdExtra"
     }
 }

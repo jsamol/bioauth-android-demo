@@ -1,5 +1,8 @@
 <resources>
     <!-- Main Activity -->
+    <string name="edit_text_user_id_hint">User ID</string>
+    <string name="edit_text_user_id_default">User</string>
+
     <string name="button_register_face">Register Face Sample</string>
     <string name="button_authenticate_face">Authenticate with Face Recognition</string>
 
