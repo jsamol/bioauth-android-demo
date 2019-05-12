@@ -1,2 +1,3 @@
-include ':app', ':bioauth'
+include ':app', ':bioauth', ':openCVLibrary343'
 project(':bioauth').projectDir = new File('bioauthsdk/app')
+project(':openCVLibrary343').projectDir = new File('bioauthsdk/openCVLibrary343')
