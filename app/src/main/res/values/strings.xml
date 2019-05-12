@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">BioAuthDemo</string>
-
     <!-- Main Activity -->
     <string name="button_register_face">Register Face Sample</string>
     <string name="button_authenticate_face">Authenticate with Face Recognition</string>

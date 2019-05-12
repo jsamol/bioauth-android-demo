@@ -10,7 +10,6 @@ localProperties.load(project.rootProject.file("local.properties").newDataInputSt
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "pl.edu.agh.bioauthdemo"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
@@ -27,12 +26,16 @@ android {
     flavorDimensions 'app'
     productFlavors {
         mobileLiveness {
+            applicationId "pl.edu.agh.bioauthdemo.mobileliveness"
+            resValue('string', 'app_name', 'BioAuthDemo (Mobile Liveness)')
             buildConfigField('String', 'LIVENESS_MODE', '"MOBILE"')
             buildConfigField('String', 'APP_ID', localProperties.getProperty('mobileLiveness.appId'))
             buildConfigField('String', 'APP_SECRET', localProperties.getProperty('mobileLiveness.appSecret'))
             versionNameSuffix('-mobileLiveness')
         }
         serverLiveness {
+            applicationId "pl.edu.agh.bioauthdemo.serverliveness"
+            resValue('string', 'app_name', 'BioAuthDemo (Server Liveness)')
             buildConfigField('String', 'LIVENESS_MODE', '"SERVER"')
             buildConfigField('String', 'APP_ID', localProperties.getProperty('serverLiveness.appId'))
             buildConfigField('String', 'APP_SECRET', localProperties.getProperty('serverLiveness.appSecret'))
