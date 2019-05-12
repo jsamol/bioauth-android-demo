@@ -6,6 +6,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import pl.edu.agh.bioauthdemo.R
 import pl.edu.agh.bioauthdemo.ui.facerecognition.AuthenticateFaceActivity
 import pl.edu.agh.bioauthdemo.ui.facerecognition.RegisterFaceActivity
+import pl.edu.agh.bioauthdemo.ui.facerecognition.RegisterFaceActivity.Companion.EXTRA_USER_ID
 import pl.edu.agh.bioauthdemo.util.navigateTo
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +15,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        registerFaceButton.setOnClickListener { navigateTo(RegisterFaceActivity::class.java) }
+        registerFaceButton.setOnClickListener {
+            navigateTo(RegisterFaceActivity::class.java, Bundle().apply { putString(EXTRA_USER_ID, userIdEditText.text.toString()) })
+        }
         authenticateFaceButton.setOnClickListener { navigateTo(AuthenticateFaceActivity::class.java) }
 
         testRegistrationButton.setOnClickListener { testRegistration() }
