@@ -4,10 +4,12 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+def localProperties = new Properties()
+localProperties.load(project.rootProject.file("local.properties").newDataInputStream())
+
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "pl.edu.agh.bioauthdemo"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
@@ -20,13 +22,33 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions 'app'
+    productFlavors {
+        mobileLiveness {
+            applicationId "pl.edu.agh.bioauthdemo.mobileliveness"
+            resValue('string', 'app_name', 'BioAuthDemo (Mobile Liveness)')
+            buildConfigField('String', 'LIVENESS_MODE', '"MOBILE"')
+            buildConfigField('String', 'APP_ID', localProperties.getProperty('mobileLiveness.appId'))
+            buildConfigField('String', 'APP_SECRET', localProperties.getProperty('mobileLiveness.appSecret'))
+            versionNameSuffix('-mobileLiveness')
+        }
+        serverLiveness {
+            applicationId "pl.edu.agh.bioauthdemo.serverliveness"
+            resValue('string', 'app_name', 'BioAuthDemo (Server Liveness)')
+            buildConfigField('String', 'LIVENESS_MODE', '"SERVER"')
+            buildConfigField('String', 'APP_ID', localProperties.getProperty('serverLiveness.appId'))
+            buildConfigField('String', 'APP_SECRET', localProperties.getProperty('serverLiveness.appSecret'))
+            versionNameSuffix('-serverLiveness')
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':bioauth')
 
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.core:core-ktx:1.0.1'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
