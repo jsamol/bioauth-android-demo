@@ -26,7 +26,11 @@ class RegisterFaceActivity : AppCompatActivity() {
 
             override fun onFailure(error: Throwable) {
                 StatsUtil.onEnd()
-                Toast.makeText(this@RegisterFaceActivity, "Samples could not be registered.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@RegisterFaceActivity,
+                    "Samples could not be registered. ${error.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }, AppConfig.livenessMode)
     }
