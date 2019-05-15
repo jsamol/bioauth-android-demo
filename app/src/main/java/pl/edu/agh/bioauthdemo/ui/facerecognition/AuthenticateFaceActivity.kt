@@ -23,7 +23,7 @@ class AuthenticateFaceActivity : AppCompatActivity() {
 
             override fun onFailure(error: Throwable) {
                 StatsUtil.onEnd()
-                Toast.makeText(this@AuthenticateFaceActivity, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@AuthenticateFaceActivity, "Authentication failed. ${error.message}", Toast.LENGTH_SHORT).show()
             }
         }, AppConfig.livenessMode)
     }
