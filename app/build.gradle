@@ -10,7 +10,7 @@ localProperties.load(project.rootProject.file("local.properties").newDataInputSt
 android {
     compileSdkVersion 28
     defaultConfig {
-        minSdkVersion 23
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
