@@ -27,7 +27,7 @@
 
     <Button
         android:id="@+id/registerFaceButton"
-        app:layout_constraintBottom_toTopOf="@id/authenticateFaceButton"
+        app:layout_constraintBottom_toTopOf="@id/guideLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/button_register_face"
@@ -36,30 +36,11 @@
 
     <Button
         android:id="@+id/authenticateFaceButton"
-        app:layout_constraintBottom_toTopOf="@id/guideLine"
+        app:layout_constraintTop_toBottomOf="@id/guideLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/button_authenticate_face"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/testRegistrationButton"
-        app:layout_constraintTop_toBottomOf="@id/guideLine"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/button_test_register_face"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/testAuthenticationButton"
-        app:layout_constraintTop_toBottomOf="@id/testRegistrationButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/button_test_authenticate_face"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

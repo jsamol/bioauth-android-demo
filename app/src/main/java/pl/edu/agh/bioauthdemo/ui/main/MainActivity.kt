@@ -19,16 +19,5 @@ class MainActivity : AppCompatActivity() {
             navigateTo(RegisterFaceActivity::class.java, Bundle().apply { putString(EXTRA_USER_ID, userIdEditText.text.toString()) })
         }
         authenticateFaceButton.setOnClickListener { navigateTo(AuthenticateFaceActivity::class.java) }
-
-        testRegistrationButton.setOnClickListener { testRegistration() }
-        testAuthenticationButton.setOnClickListener { testAuthentication() }
-    }
-
-    private fun testRegistration() {
-
-    }
-
-    private fun testAuthentication() {
-
     }
 }
